@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FriendFinder Survey</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <style>
+        #question {
+            font-size: 18px;
+
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+
+    <div class="container">
+        <nav>
+            <div class="nav-wrapper">
+                <i class="material-icons large brand-logo left">accessibility</i>
+                <a href="/home" class="brand-logo center"> FriendFinder </a>
+                <i class="material-icons large brand-logo right">accessibility</i>
+
+
+            </div>
+        </nav>
+
+
+
+        <div class="row">
+            <h3>
+                About You
+            </h3>
+        </div>
+
+        <div class="row">
+            <div class="col s12">
+                <div class="row">
+                    <div class="input-field col s12">
+
+                        <input id="name" type="text" id="autocomplete-input" class="autocomplete" required>
+                        <label for="autocomplete-input">Full Name (Required)</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col s12">
+                <div class="row">
+                    <div class="input-field col s12">
+
+                        <input id="photo" type="text" id="autocomplete-input" class="autocomplete" required>
+                        <label for="autocomplete-input">URL Link to photo (Required)</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="input-field col s12 m8">
+                <select class="icons" id="q1">
+                    <option value="" disabled selected>Choose your option</option>
+                    <option value="1">1 (Strongly Agree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3
+                    </option>
+                    <option value="4">4
+                    </option>
+                    <option value="5">5 (Strongly Disagree)
+                    </option>
+                </select>
+                <label id="question">1. I need coffee as soon as I wake up</label>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="input-field col s12 m8">
+                <select class="icons" id="q2">
+                    <option value="" disabled selected>Choose your option</option>
+                    <option value="1">1 (Strongly Agree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3
+                    </option>
+                    <option value="4">4
+                    </option>
+                    <option value="5">5 (Strongly Disagree)
+                    </option>
+                </select>
+                <label id="question">2. I need to put sunscreen on every day before I step outside</label>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="input-field col s12 m8">
+                <select class="icons" id="q3">
+                    <option value="" disabled selected>Choose your option</option>
+                    <option value="1">1 (Strongly Agree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3
+                    </option>
+                    <option value="4">4
+                    </option>
+                    <option value="5">5 (Strongly Disagree)
+                    </option>
+                </select>
+                <label id="question">3. I need to make sure any notifications on my phone are cleared ASAP</label>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="input-field col s12 m8">
+                <select class="icons" id="q4">
+                    <option value="" disabled selected>Choose your option</option>
+                    <option value="1">1 (Strongly Agree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3
+                    </option>
+                    <option value="4">4
+                    </option>
+                    <option value="5">5 (Strongly Disagree)
+                    </option>
+                </select>
+                <label id="question">4. I need to floss before I go to bed every night</label>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="input-field col s12 m8">
+                <select class="icons" id="q5">
+                    <option value="" disabled selected>Choose your option</option>
+                    <option value="1">1 (Strongly Agree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3
+                    </option>
+                    <option value="4">4
+                    </option>
+                    <option value="5">5 (Strongly Disagree)
+                    </option>
+                </select>
+                <label id="question">5. I need to be at every Disney/Pixar movie release on opening night</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12 m8">
+                <select class="icons" id="q6">
+                    <option value="" disabled selected>Choose your option</option>
+                    <option value="1">1 (Strongly Agree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3
+                    </option>
+                    <option value="4">4
+                    </option>
+                    <option value="5">5 (Strongly Disagree)
+                    </option>
+                </select>
+                <label id="question">6. I need to scream the lyrics to every Britney song that I hear</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12 m8">
+                <select class="icons" id="q7">
+                    <option value="" disabled selected>Choose your option</option>
+                    <option value="1">1 (Strongly Agree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3
+                    </option>
+                    <option value="4">4
+                    </option>
+                    <option value="5">5 (Strongly Disagree)
+                    </option>
+                </select>
+                <label id="question">7. I need make sure I eat often throughout the day or I get very "hangry"</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12 m8">
+                <select class="icons" id="q8">
+                    <option value="" disabled selected>Choose your option</option>
+                    <option value="1">1 (Strongly Agree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3
+                    </option>
+                    <option value="4">4
+                    </option>
+                    <option value="5">5 (Strongly Disagree)
+                    </option>
+                </select>
+                <label id="question">8. I love babies!</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12 m8">
+                <select class="icons" id="q9">
+                    <option value="" disabled selected>Choose your option</option>
+                    <option value="1">1 (Strongly Agree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3
+                    </option>
+                    <option value="4">4
+                    </option>
+                    <option value="5">5 (Strongly Disagree)
+                    </option>
+                </select>
+                <label id="question">9. I love dogs!</label>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="input-field col s12 m8">
+                <select class="icons" id="q10">
+                    <option value="" disabled selected>Choose your option</option>
+                    <option value="1">1 (Strongly Agree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3
+                    </option>
+                    <option value="4">4
+                    </option>
+                    <option value="5">5 (Strongly Disagree)
+                    </option>
+                </select>
+                <label id="question">10. I love Chicago!</label>
+            </div>
+        </div>
+
+        <button class="btn waves-effect waves-light" type="submit" name="action" id="submit">Submit
+            <i class="material-icons right">send</i>
+        </button>
+
+    </div>
+
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+
+
+    <script type="text/javascript">
+        $("#submit").on("click", function (event) {
+            // event.preventDefault();​
+            var friendScore = [$("#q1").val().trim(),
+                $("#q2").val().trim(),
+                $("#q3").val().trim(),
+                $("#q4").val().trim(),
+                $("#q5").val().trim(),
+                $("#q6").val().trim(),
+                $("#q7").val().trim(),
+                $("#q8").val().trim(),
+                $("#q9").val().trim(),
+                $("#q10").val().trim()
+            ];
+
+            var newFriend = {
+                name: $("#name").val().trim(),
+                scores: friendScore,
+                photo: $("#photo").val().trim()
+            }
+            console.log(newFriend);
+
+            $.post("/friend", newFriend)
+        .then(function(data) {
+          console.log( data);
+
+        });
+
+        //     $.ajax({
+        //         method: "post",
+        //         data: newFriend,
+        //         URL: "/friend"
+        //     }).then(function(res){
+        //         console.log("added")
+        //     })
+        });
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.autocomplete');
+            var instances = M.Autocomplete.init(elems, options);
+            var elems = document.querySelectorAll('select');
+            var instances = M.FormSelect.init(elems, options);
+        });
+
+
+        // Or with jQuery
+
+        $(document).ready(function () {
+            $('select').formSelect();
+        });
+    </script>
+
+
+
+</body>
+
+</html>
