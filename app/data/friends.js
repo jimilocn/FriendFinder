@@ -23,7 +23,7 @@ var friendsArray = [{
     }, {
         name: "Christian",
         photo: "https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-        scores: [4, 5, 2, 3, 1, 4, 2, 5, 1, 2],
+        scores: [5, 5, 5, 5, 5, 5, 5, 5, 5, 5],
         instagram: "https://www.instagram.com/kortajarenajon/"
     }
 ];

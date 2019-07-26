@@ -9,12 +9,12 @@ module.exports = function(app){
        // friendData.length = 0;
         //response.json({ok:true});
         var newFriend = request.body;
-        var difference = 0;
+       // var difference = 0;
         var result = 0;
         var newArrayWithTotalDifference = [];
         
         for(var i = 0; i < friendData.length; i++){
-            // difference = 0;
+            var difference = 0;
             for(var j = 0; j < newFriend.scores.length; j++){
                 result = Math.abs(parseFloat(friendData[i].scores[j]) - parseFloat(newFriend.scores[j]))
                 // console.log("This is the result: " + result);

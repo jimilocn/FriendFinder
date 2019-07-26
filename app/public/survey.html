@@ -296,28 +296,36 @@
 
 
     <script type="text/javascript">
-        var questions = $(".icons").val();
+        $("#submit").on("click", function (event) {
+            //event.preventDefault();​
+            var questions = $(".icons")
+            console.log(questions)
+            var scoresTemp=[]
+            for (var i=0; i<questions.length; i++){
+                if (questions[i].value > 0 ){
+                    console.log(questions[i].value)
+                    scoresTemp.push(questions[i].value)
+                }
 
-            $("#submit").on("click", function (event) {
-                // event.preventDefault();​
+            }
+            console.log("surveyscores: ", scoresTemp)
+            if (scoresTemp.length ==10) {
+                // var friendScore = [$("#q1").val().trim(),
+                //     $("#q2").val().trim(),
+                //     $("#q3").val().trim(),
+                //     $("#q4").val().trim(),
+                //     $("#q5").val().trim(),
+                //     $("#q6").val().trim(),
+                //     $("#q7").val().trim(),
+                //     $("#q8").val().trim(),
+                //     $("#q9").val().trim(),
+                //     $("#q10").val().trim()
+                // ];
 
-                if (questions){
-                var friendScore = [$("#q1").val().trim(),
-                    $("#q2").val().trim(),
-                    $("#q3").val().trim(),
-                    $("#q4").val().trim(),
-                    $("#q5").val().trim(),
-                    $("#q6").val().trim(),
-                    $("#q7").val().trim(),
-                    $("#q8").val().trim(),
-                    $("#q9").val().trim(),
-                    $("#q10").val().trim()
-                ];
-
-                console.log(friendScore);
+                // console.log(friendScore);
                 var newFriend = {
                     name: $("#name").val().trim(),
-                    scores: [friendScore],
+                    scores: scoresTemp,
                     photo: $("#photo").val().trim()
                 }
                 $("#name").val("");
@@ -335,16 +343,17 @@
 
                     });
 
-                }
-                else{
-                    $("#results").empty();
-                    $("#results").append("<h6> The questions were not completed!! Please complete survey completely to get the best result from our community!</h6>");
-                }
+            } else {
+                $("#results").empty();
+                $("#results").append(
+                    "<h6> The questions were not completed!! Please complete survey completely to get the best result from our community!</h6>"
+                );
+            }
 
 
-            });
+        });
 
-       
+
         document.addEventListener('DOMContentLoaded', function () {
             var elems = document.querySelectorAll('.autocomplete');
             // var instances = M.Autocomplete.init(elems, options);
