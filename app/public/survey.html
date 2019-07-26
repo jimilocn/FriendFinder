@@ -16,6 +16,10 @@
             font-size: 18px;
 
         }
+
+        body {
+            background: rgb(247, 230, 233);
+        }
     </style>
 
 
@@ -87,7 +91,7 @@
         </div>
 
 
-        <!-- <div class="row">
+        <div class="row">
             <div class="input-field col s12 m8">
                 <select class="icons" id="q2">
                     <option value="" disabled selected>Choose your option</option>
@@ -243,7 +247,7 @@
                 </select>
                 <label id="question">10. I love Chicago!</label>
             </div>
-        </div> -->
+        </div>
 
         <button class="btn waves-effect waves-light modal-trigger" type="submit" name="action" id="submit"
             href="#modal1">Submit
@@ -253,12 +257,12 @@
 
         <!-- Modal Structure -->
         <div id="modal1" class="modal">
-            <div class="modal-content">
+            <div class="modal-content center">
                 <h4>Your closest match based on your results!</h4>
                 <p id="results"></p>
             </div>
             <div class="modal-footer">
-                <a href="#!" class="modal-close waves-effect waves-green btn-flat">X</a>
+                <a href="/home" class="modal-close waves-effect waves-green btn-flat">LET'S GO MEET THEM!</a>
             </div>
         </div>
 
@@ -277,36 +281,36 @@
     <script type="text/javascript">
         $("#submit").on("click", function (event) {
             // event.preventDefault();​
-            // var friendScore = [$("#q1").val().trim()
-            // $("#q2").val().trim(),
-            // $("#q3").val().trim(),
-            // $("#q4").val().trim(),
-            // $("#q5").val().trim(),
-            // $("#q6").val().trim(),
-            // $("#q7").val().trim(),
-            // $("#q8").val().trim(),
-            // $("#q9").val().trim(),
-            // $("#q10").val().trim()
-            // ];
+            var friendScore = [$("#q1").val().trim(),
+                $("#q2").val().trim(),
+                $("#q3").val().trim(),
+                $("#q4").val().trim(),
+                $("#q5").val().trim(),
+                $("#q6").val().trim(),
+                $("#q7").val().trim(),
+                $("#q8").val().trim(),
+                $("#q9").val().trim(),
+                $("#q10").val().trim()
+            ];
 
+            console.log(friendScore);
             var newFriend = {
                 name: $("#name").val().trim(),
-                scores: [1, 2, 3, 4, 5, 1, 2, 3, 4, 5],
+                scores: [friendScore],
                 photo: $("#photo").val().trim()
             }
+            $("#name").val("");
+            $("#photo").val("");
+           
 
             $.post("/api/friend", newFriend)
                 .then(function (data) {
                     console.log(data);
-                    $("#results").append(data.friendData);
-                    $("#results").append("<img src='" + data.photo + "'>");
-
-
+                    $("#results").empty();
+                    $("#results").append("<h3>" + data.friendData + "</h3>");
+                    $("#results").append("<img style='width:250px' src='" + data.photo + "'>");
 
                 });
-
-
-
 
 
 
