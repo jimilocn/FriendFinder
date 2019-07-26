@@ -254,17 +254,34 @@
             <i class="material-icons right">send</i>
         </button>
 
+        <div class="row">
+            <div class="col  s12 center"><a href="/api/friend">API Table Link</a></div>
+        </div>
+
 
         <!-- Modal Structure -->
-        <div id="modal1" class="modal">
+        <div id="modal1" class="modal modal-fixed-footer">
             <div class="modal-content center">
                 <h4>Your closest match based on your results!</h4>
                 <p id="results"></p>
             </div>
             <div class="modal-footer">
-                <a href="/home" class="modal-close waves-effect waves-green btn-flat">LET'S GO MEET THEM!</a>
+                <a href="/home" class="modal-close waves-effect waves-green btn-flat">Home Screen</a>
             </div>
         </div>
+
+        <!-- Modal Structure -->
+        <div id="modal2" class="modal">
+            <div class="modal-content">
+                <h4>Error</h4>
+                <p>Please fill out the entire survey so we can give you the best match!</p>
+            </div>
+            <div class="modal-footer">
+                <a href="/survey" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+            </div>
+        </div>
+
+
 
 
     </div>
@@ -279,45 +296,55 @@
 
 
     <script type="text/javascript">
-        $("#submit").on("click", function (event) {
-            // event.preventDefault();​
-            var friendScore = [$("#q1").val().trim(),
-                $("#q2").val().trim(),
-                $("#q3").val().trim(),
-                $("#q4").val().trim(),
-                $("#q5").val().trim(),
-                $("#q6").val().trim(),
-                $("#q7").val().trim(),
-                $("#q8").val().trim(),
-                $("#q9").val().trim(),
-                $("#q10").val().trim()
-            ];
+        var questions = $(".icons").val();
 
-            console.log(friendScore);
-            var newFriend = {
-                name: $("#name").val().trim(),
-                scores: [friendScore],
-                photo: $("#photo").val().trim()
-            }
-            $("#name").val("");
-            $("#photo").val("");
-           
+            $("#submit").on("click", function (event) {
+                // event.preventDefault();​
 
-            $.post("/api/friend", newFriend)
-                .then(function (data) {
-                    console.log(data);
+                if (questions){
+                var friendScore = [$("#q1").val().trim(),
+                    $("#q2").val().trim(),
+                    $("#q3").val().trim(),
+                    $("#q4").val().trim(),
+                    $("#q5").val().trim(),
+                    $("#q6").val().trim(),
+                    $("#q7").val().trim(),
+                    $("#q8").val().trim(),
+                    $("#q9").val().trim(),
+                    $("#q10").val().trim()
+                ];
+
+                console.log(friendScore);
+                var newFriend = {
+                    name: $("#name").val().trim(),
+                    scores: [friendScore],
+                    photo: $("#photo").val().trim()
+                }
+                $("#name").val("");
+                $("#photo").val("");
+
+
+                $.post("/api/friend", newFriend)
+                    .then(function (data) {
+                        console.log(data);
+                        $("#results").empty();
+                        $("#results").append("<h4>" + data.friendData + "</h4>");
+                        $("#results").append("<a target='_blank' href='" + data.instagram +
+                            "'><h5>Instagram Link</h5></a>")
+                        $("#results").append("<img style='width:33%' src='" + data.photo + "'>");
+
+                    });
+
+                }
+                else{
                     $("#results").empty();
-                    $("#results").append("<h3>" + data.friendData + "</h3>");
-                    $("#results").append("<img style='width:250px' src='" + data.photo + "'>");
-
-                });
+                    $("#results").append("<h6> The questions were not completed!! Please complete survey completely to get the best result from our community!</h6>");
+                }
 
 
+            });
 
-
-        });
-
-
+       
         document.addEventListener('DOMContentLoaded', function () {
             var elems = document.querySelectorAll('.autocomplete');
             // var instances = M.Autocomplete.init(elems, options);

@@ -14,15 +14,18 @@ module.exports = function(app){
         var newArrayWithTotalDifference = [];
         
         for(var i = 0; i < friendData.length; i++){
-            difference = 0;
+            // difference = 0;
             for(var j = 0; j < newFriend.scores.length; j++){
                 result = Math.abs(parseFloat(friendData[i].scores[j]) - parseFloat(newFriend.scores[j]))
+                // console.log("This is the result: " + result);
                difference += Math.abs(result)
+            //    console.log("this is the difference: "  +difference);
             }
             newArrayWithTotalDifference.push({
                 friendData: friendData[i].name,
                 totalDifference: difference,
-                photo: friendData[i].photo
+                photo: friendData[i].photo,
+                instagram: friendData[i].instagram
             })
         }
         friendData.push(newFriend);
